@@ -7,7 +7,7 @@ body {
     margin: 0;
     padding: 0;
     background: #000000;
-    color: aliceblue;
+    color: #ffffff;
     font-size: 30px;
     font-family: sans-serif;
 }
@@ -18,7 +18,9 @@ section {
 }
 
 /* navigation */
-/* An element with position: fixed; is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. The top, right, bottom, and left properties are used to position the element. */
+/* An element with position: fixed; is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. The top, right, bottom, and left properties are used to position the element. 
+flex	Displays an element as a block-level flex container
+*/
 
 nav {
     position: fixed;
