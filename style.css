@@ -4,22 +4,64 @@
 
 html,
 body {
+    --border-radius: 100px;
+    --blue: #1c47ff;
+    --pink: #d6a3fb;
+    --green: #d0ff94;
+    --grey: #e5e5e5;
+    --gutter: 3.125vw;
+
     margin: 0;
     padding: 0;
     background: #000000;
     color: #ffffff;
     font-size: 30px;
-    font-family: sans-serif;
+    font-family: 'Syne', sans-serif;
+}
+
+h1 {
+    font-size: 80px;
+    margin: 0px;
+}
+
+h2 {
+    font-size: 60px;
+    margin: 0px;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
 }
 
 section {
+    position: relative;
+    display: flex;
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 100px);
+    top: 100px;
+    z-index: 2;
+    /* the z-index CSS property sets the z-order of a positioned element and its descendants or flex and grid items. Overlapping elements with a larger z-index cover those with a smaller one. */
 }
+
+section.sticky  {
+    position: sticky;
+    margin-top: 100px;
+}
+
+section.full-screen {
+    height: 100vh;
+    top: 0;
+    margin-top: o;
+    z-index: 3;
+}
+
 
 /* navigation */
 /* An element with position: fixed; is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. The top, right, bottom, and left properties are used to position the element. 
-flex	Displays an element as a block-level flex container
+flex	Displays an element as a block-level flex container.
+
+Gutters are the gaps between column content, created by horizontal padding .
 */
 
 nav {
@@ -29,6 +71,7 @@ nav {
     top: 0;
     left: 0;
     font-size: 20px;
+    z-index: 1;
 }
 
 nav ul {
@@ -37,4 +80,118 @@ nav ul {
     width: 100%;
     margin: 0;
     padding: 0;
+}
+
+nav ul li a {
+    color: #ffffff;
+    font-family: 'Space Mono', monospace;
+}
+
+/* about section */
+
+section.about  .empty{
+    flex-basis: 37.5vw;
+    background: var(--grey);
+    border-radius: var(--border-radius);
+}
+
+section.about article {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+section.about article  .title {
+    flex: 2;
+    display: flex;
+    align-items: flex-end;
+    background: var(--blue);
+    border-radius: var(--border-radius);
+    padding: var(--gutter);
+}
+
+section.about  article  .description {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: var(--pink);
+    border-radius: var(--border-radius);
+    padding: var(--gutter);
+    color: #000000;
+}
+
+/* service section */
+
+section.service article {
+    display: flex;
+    width: 100%;
+}
+
+section.service  figure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 56.25vw;
+    margin: 0;
+    background: var(--grey);
+    border-radius: var(--border-radius);
+}
+
+section.service figure img {
+    width: 50%;
+}
+
+section.service .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    background-color: #1f1a1c;
+    padding: var(--gutter);
+    border-radius: var(--border-radius);
+}
+
+section.service ,text a {
+    font-family: 'Space Mono', monospace;
+}
+
+
+
+
+
+/* responsive for mobile */
+
+@media only screen and (max-width: 768px) {
+    html, body {
+        --border-radius: 50px;
+        --gutter: 6.25vw;
+    }
+
+    h1 {
+        font-size: 60px;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    nav ul li {
+        margin-left: 25px;
+    }
+
+    section.service  article {
+        flex-direction: column;
+    }
+
+    section.service figure {
+        flex-basis: 25vh;
+    }
+    section.service figure img {
+        width: 20%;
+    }
+
+    section.contact a {
+        font-size: 50px;
+        transform: rotate(90deg);
+    }
 }
