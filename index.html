@@ -4,25 +4,34 @@
 <head>
     <meta charset="utf-8" />
     <title> My Portfolio </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=Syne:wght@400;700&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 </head>
 
 <body>
     <nav>
-    <ul>
-        <li><a href="#about"> about</a> </li>
-        <li><a href="#services"> services</a></li>
-        <li><a href="#contact"> contact</a></li>
-    </ul>
-</nav>
-    <section id="about">
-        <div> empty blog</div>
+        <ul>
+            <li><a href="#about"> About</a> </li>
+            <li><a href="#services"> Services</a></li>
+            <li><a href="#contact"> Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about" class="about">
+        <div class="empty"> empty blog</div>
         <article>
-            <div>
+            <div class="title">
                 <h1> creative developer </h1>
             </div>
-            <div>
+            <div class="description">
                 <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua. Non sodales neque sodales ut etiam sit amet. In cursus turpis massa
                     tincidunt dui ut.</p>
@@ -30,12 +39,12 @@
         </article>
     </section>
 
-    <section id="services">
+    <section id="services" class="service service-html sticky">
         <article>
             <figure>
                 <img src="img/diamond.png" width="200" />
             </figure>
-            <div>
+            <div class="text">
                 <h2> HTML</h2>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
@@ -49,12 +58,12 @@
         </article>
     </section>
 
-    <section>
+    <section class="service service-css sticky">
         <article>
             <figure>
                 <img src="img/triangle.png" width="200" />
             </figure>
-            <div>
+            <div class="text">
                 <h2> CSS</h2>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
@@ -68,12 +77,12 @@
         </article>
     </section>
 
-    <section>
+    <section class="service service-js sticky">
         <article>
             <figure>
                 <img src="img/octagon.png" width="200" />
             </figure>
-            <div>
+            <div class="text">
                 <h2> JS</h2>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
@@ -87,7 +96,7 @@
         </article>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="contact full-screen">
         <a href="mailto:hello@gmail.com">hello@gmail.com</a>
 
     </section>
