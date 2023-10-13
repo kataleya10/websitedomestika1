@@ -3,13 +3,14 @@
 
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title> My Portfolio </title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=Syne:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
 </head>
 
 <body>
@@ -97,21 +98,23 @@
     </section>
 
     <script>
+        
+        let emptyElement = document.querySelector('.about .empty');
+        let titleElement = document.querySelector('.about .title');
 
-        let emptyElement = document.querySelector(".about .empty");
-        let title = document.querySelector(".about .tittle");
+        let figureElements = document.querySelectorAll('.service figure');
 
-        let figureElements = document.querySelectorAll(".service .figure");
 
-        window.addEventListener("mousemove", handleMouseMove);
+        window.addEventListener('mousemove', handleMouseMove);
 
         function handleMouseMove(event) {
-            emptyElement.style.flexbasis = event.clientX + "px"
-            titleElement.style.flexbasis = event.clientY / 2 + "px"
+
+            emptyElement.style.flexBasis = event.clientX + 'px';
+            titleElement.style.flexBasis = event.clientY / 2 + 'px';
 
             figureElements.forEach(function (element) {
-                element.style.flexbasis = (window.innerWidth - event.clientX) + "px"
-            })
+                element.style.flexBasis = (window.innerWidth - event.clientX) + 'px';
+            });
         }
 
     </script>

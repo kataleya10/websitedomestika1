@@ -9,22 +9,23 @@ body {
     --pink: #d6a3fb;
     --green: #526538;
     --grey: #e5e5e5;
-    --gutter: 3.125vw;
+    --gutter: 3.125vw 6.25vw;
 
     margin: 0;
     padding: 0;
     background: #000000;
     color: #ffffff;
-    font-size: 30px;
+    font-size: 20px;
     font-family: 'Syne', sans-serif;
 }
 
 h1 {
     font-size: 70px;
+    line-height: 1em;
     margin: 0px;
 }
 
-h1 {
+h2 {
     font-size: 60px;
     margin: 0px;
 }
@@ -54,6 +55,8 @@ section.full-screen {
     top: 0;
     margin-top: o;
     z-index: 3;
+    background: #000000;
+    color: #f5f0f0;
 }
 
 
@@ -74,7 +77,6 @@ nav {
     width: calc(100% - 2em);
     height: 4rem;
     margin-left: 1em;
-    font-family: droid-sans-mono,monospace;
     font-weight: 400;
     display: flex;
     position: fixed;
@@ -82,6 +84,7 @@ nav {
 }
 
 nav ul {
+    overflow: hidden;
     display: flex;
     align-items: center;
     width: 100%;
@@ -100,12 +103,18 @@ nav ul li a {
     font-family: 'Space Mono', monospace;
 }
 
+nav ul li a:hover {
+    background: #e5e5e5;
+    color: #010101;
+}
+
 /* about section */
 
 section.about .empty {
     flex-basis: 37.5vw;
     background: var(--grey);
     border-radius: var(--border-radius);
+    transition: flex-basis 1s cubic-bezier(0,.9,.4,.99);
 }
 
 section.about article {
@@ -121,6 +130,8 @@ section.about article .title {
     background: var(--blue);
     border-radius: var(--border-radius);
     padding: var(--gutter);
+    transition: flex-basis 1s cubic-bezier(0,.9,.4,.99);
+
 }
 
 section.about article .description {
@@ -148,10 +159,12 @@ section.service figure {
     margin: 0;
     background: var(--green);
     border-radius: var(--border-radius);
+    max-width: 62.5vw;
+    transition: flex-basis 1s cubic-bezier(0,.9,.4,.99);
 }
 
 section.service figure img {
-    width: 50%;
+    width: 40%;
 }
 
 section.service .text {
@@ -178,16 +191,77 @@ section.service.service-html figure img {
     animation-timing-function: cubic-bezier(.77, .28, .42, .93);
 }
 
+ection.service.service-css figure img {
+    animation-name: scale;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(.77,.28,.42,.93);
+}
+
+section.service.service-js figure img {
+    animation-name: rotate;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(.77,.28,.42,.93);
+}
+
 @keyframes float {
     0% {
-        transform: translateY(-20px);
+        transform: translateY(-5%);
     }
-
     100% {
-        transform: translateY(20px);
+        transform: translateY(5%);
     }
 }
 
+@keyframes scale {
+    0% {
+        transform: scale(.75);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+* service section overrides */
+
+section.service.service-html figure {
+    background: var(--green);
+}
+
+section.service.service-html .text h2,
+section.service.service-html .text a {
+    color: var(--pink);
+}
+
+section.service.service-css figure {
+    background: var(--blue);
+}
+
+section.service.service-css .text h2,
+section.service.service-css .text a {
+    color: var(--green);
+}
+
+section.service.service-js figure {
+    background: var(--pink);
+}
+
+section.service.service-js .text h2,
+section.service.service-js .text a {
+    color: var(--blue);
+}
 
 
 /* contact section */
@@ -196,22 +270,20 @@ section.service.service-html figure img {
 section.contact {
     align-items: center;
     justify-content: center;
-    background: linear-gradient(var(--blue), var(--green) 60%, var(--pink) 70%, var(--grey));
+    width: 95%;
+    height: 100vh;
+    background: rgb(0,0,0,0.87);
     border-radius: var(--border-radius);
-    mix-blend-mode: difference;
+    border-color: #526538;
+    border-style: solid;
 }
 
 section.contact a {
     font-size: 100px;
-    color: #000000;
+    color: #ffffff;
     font-weight: bold;
-    transition: filter 2s cubic-bezier(.77, .28, .42, .93);
-    will-change: filter;
 }
 
-section.contact a:hover {
-    filter: opacity(20px);
-}
 
 /* responsive for mobile */
 
