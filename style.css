@@ -7,7 +7,7 @@ body {
     --border-radius: 100px;
     --blue: #1c47ff;
     --pink: #d6a3fb;
-    --green: #d0ff94;
+    --green: #526538;
     --grey: #e5e5e5;
     --gutter: 3.125vw;
 
@@ -24,7 +24,7 @@ h1 {
     margin: 0px;
 }
 
-h2 {
+h1 {
     font-size: 60px;
     margin: 0px;
 }
@@ -44,7 +44,7 @@ section {
     /* the z-index CSS property sets the z-order of a positioned element and its descendants or flex and grid items. Overlapping elements with a larger z-index cover those with a smaller one. */
 }
 
-section.sticky  {
+section.sticky {
     position: sticky;
     margin-top: 100px;
 }
@@ -67,7 +67,7 @@ Gutters are the gaps between column content, created by horizontal padding .
 nav {
     position: fixed;
     width: 100%;
-    height: 100%;
+    height: 100px;
     top: 0;
     left: 0;
     font-size: 20px;
@@ -78,8 +78,14 @@ nav ul {
     display: flex;
     align-items: center;
     width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
+}
+
+nav ul li {
+    list-style: none;
+    margin-left: 45px;
 }
 
 nav ul li a {
@@ -89,7 +95,7 @@ nav ul li a {
 
 /* about section */
 
-section.about  .empty{
+section.about .empty {
     flex-basis: 37.5vw;
     background: var(--grey);
     border-radius: var(--border-radius);
@@ -101,7 +107,7 @@ section.about article {
     flex-direction: column;
 }
 
-section.about article  .title {
+section.about article .title {
     flex: 2;
     display: flex;
     align-items: flex-end;
@@ -110,7 +116,7 @@ section.about article  .title {
     padding: var(--gutter);
 }
 
-section.about  article  .description {
+section.about article .description {
     flex: 1;
     display: flex;
     align-items: center;
@@ -127,13 +133,13 @@ section.service article {
     width: 100%;
 }
 
-section.service  figure {
+section.service figure {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-basis: 56.25vw;
     margin: 0;
-    background: var(--grey);
+    background: var(--green);
     border-radius: var(--border-radius);
 }
 
@@ -151,18 +157,61 @@ section.service .text {
     border-radius: var(--border-radius);
 }
 
-section.service ,text a {
+section.service text a {
     font-family: 'Space Mono', monospace;
+}
+
+/* service section animations */
+
+section.service.service-html figure img {
+    animation-name: float;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(.77, .28, .42, .93);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(20px);
+    }
 }
 
 
 
+/* contact section */
 
+
+section.contact {
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(var(--blue), var(--green) 60%, var(--pink) 70%, var(--grey));
+    border-radius: var(--border-radius);
+    mix-blend-mode: difference;
+}
+
+section.contact a {
+    font-size: 100px;
+    color: #000000;
+    font-weight: bold;
+    transition: filter 2s cubic-bezier(.77, .28, .42, .93);
+    will-change: filter;
+}
+
+section.contact a:hover {
+    filter: blur(20px);
+}
 
 /* responsive for mobile */
 
 @media only screen and (max-width: 768px) {
-    html, body {
+
+    html,
+    body {
         --border-radius: 50px;
         --gutter: 6.25vw;
     }
@@ -179,13 +228,14 @@ section.service ,text a {
         margin-left: 25px;
     }
 
-    section.service  article {
+    section.service article {
         flex-direction: column;
     }
 
     section.service figure {
         flex-basis: 25vh;
     }
+
     section.service figure img {
         width: 20%;
     }
