@@ -26,12 +26,10 @@
         <div class="empty"></div>
         <article>
             <div class="title">
-                <h1> creative developer </h1>
+                <h1> Chalines Zbinden </h1>
             </div>
             <div class="description">
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Non sodales neque sodales ut etiam sit amet. In cursus turpis massa
-                    tincidunt dui ut.</p>
+                <p> Hi! 👋 I'm a aesthetics focused creative developer and graphic designer based in Switzerland. </p>
             </div>
         </article>
     </section>
@@ -98,7 +96,25 @@
 
     </section>
 
+    <script>
 
+        let emptyElement = document.querySelector(".about .empty");
+        let title = document.querySelector(".about .tittle");
+
+        let figureElements = document.querySelectorAll(".service .figure");
+
+        window.addEventListener("mousemove", handleMouseMove);
+
+        function handleMouseMove(event) {
+            emptyElement.style.flexbasis = event.clientX + "px"
+            titleElement.style.flexbasis = event.clientY / 2 + "px"
+
+            figureElements.forEach(function (element) {
+                element.style.flexbasis = (window.innerWidth - event.clientX) + "px"
+            })
+        }
+
+    </script>
 </body>
 
 </html>
