@@ -116,7 +116,19 @@ section.about .empty {
     border-radius: var(--border-radius);
     transition: flex-basis 1s cubic-bezier(0, .9, .4, .99);
 }
+section.empty figure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 56.25vw;
+    margin: 0;;
+    max-width: 62.5vw;
+    transition: flex-basis 1s cubic-bezier(0, .9, .4, .99);
+}
 
+section.empty figure img {
+    width: 100%;
+}
 section.about article {
     flex: 1;
     display: flex;
